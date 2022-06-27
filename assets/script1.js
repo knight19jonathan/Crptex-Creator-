@@ -1,48 +1,93 @@
-var availbleChracters 
-// UPPERCASE
-var availbleChracters1
-// lower case
-var availbleChracters2
-// !@#*()&)! special characters
-var availbleChracters3 
-// 12378243 numbers 
-var length1
-// length of password 1-253
-var password
+var password;
+var length;
+var passwordCharacters = "";
+const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+const alphabet = alpha.map((x) => String.fromCharCode(x));
 
 var generateBtn = document.querySelector("#generate");
-// function to get parameters
+generateBtn.addEventListener("click", function(){ getPassword()}); 
 
-generateBtn.addEventListener("click", getParameters,);
-getParameters.addEventListener(getParameters1);
-function getParameters() {
-    let availbleChracters = confirm("There are 4 categories of characters you can use for your password you must pick at least one category to make a password choose from UPPERCASE, lower case, numbers, or special characters. Would you like to use UPPERCASE characters in your password?");
-    if (availbleChracters == false) {
-        window.alert("Okay no UPPERCASE characters.");
-        return availbleChracters = false;
-    } else {
-        window.alert("Added UPPERCASE characters to your password!");
-        return availbleChracters = true;
-    } 
-    // availbleChracters();
+function getPassword() {
+
+    let parameters = {
+        length: [],
+        uPPErChars:"",
+        lowerChars:"",
+        sPecChars:"",
+        nUmChars:"", 
     }
-    function getParameters1() {
-        let availbleChracters1 = confirm("Would you like to include lower_case characters in your password?");
-        if (availbleChracters1 == false) {
-            window.alert("Okay we won't use lower_case characters.");
-            return availbleChracters1 = false;
-        } else {
-            window.alert("Added lower_case characaters!");
-            return availbleChracters1 = true;}
-        }    
+
+    parameters.length = prompt("Pick a number of characters between 8 and 128 for your password.")
+
+    if (parameters.length<8) {
+        window.alert("Must be more than 8 characters.")
+    } else if (parameters.length>128) {
+        window.alert("Cannot exceed 128 characters.")
+    } else (parameters.lenth>=8 && parameters.length<=128);
+    parameters.uPPErChars = confirm("Include CAPITAL letters in your password?")
+    if (parameters.uPPErChars == true) {
+        var uPPErChars = {
+            
+        }
+        console.log(passwordCharacters = passwordCharacters += uPPErChars)
+        window.alert("Included CAPITAL letters.")
+    } else {
+        window.alert("Password will not include CAPITAL letters.")
+    }
+    parameters.lowerChars = confirm("Include lower case letters?") 
+    if (parameters.lowerChars == true) {
+        console.log(passwordCharacters = passwordCharacters += lowerChars)
+        window.alert("Included lower case letters.")
+    } else {
+        window.alert("Password will not include lower case letters.")
+    }
+    parameters.sPecChars = confirm("Include Special characters?")
+    if (parameters.sPecChars == true) {
+        console.log(passwordCharacters = passwordCharacters += sPecChars)
+        window.alert("Included Special characters.")
+    } else {
+        window.alert("Excluded Special characters.")
+    } 
+    parameters.nUmChars = confirm("Include numbers?")
+    if (parameters.nUmChars == true) {
+        console.log(passwordCharacters = passwordCharacters += nUmChars)
+        window.alert("Included numbers.")
+    } else {
+        window.alert("Excluded numbers.")
+    }
+    // +++++++++++++++++++++++++above works++++++++++++++holyshit++++++++++
+    console.log(parameters);
 
 
+    for (var i =0; i <= length.length; i++) {
+        password = passwordCharacters[Math.floor(math.random() * passwordCharacters.length)]
+    }
+    console.log(password)
+    return password;
 
+    
+}
 
+function writePassword() {
+    var password = getPassword();
+    var passwordText = document.querySelector("#password")
+    passwordText.value = password;
+}
 
+// function getPassword() {
+//     var password = ""
 
 // getParameters();
 
-const alpha = Array.from(Array(26)).map((e, i) => i + 65);
-const alphabet = alpha.map((x) => String.fromCharCode(x));
-console.log(alphabet);
+// for (i=0;i<length;i++){
+
+// }
+
+// return password
+
+// }
+
+// const alpha = Array.from(Array(26)).map((e, i) => i + 65);
+// const alphabet = alpha.map((x) => String.fromCharCode(x));
+// console.log(alphabet);
+// console.log()
