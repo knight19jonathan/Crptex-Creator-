@@ -1,38 +1,49 @@
-var realPassword = [];
-var password;
-var length;
-var passwordCharacters = "";
-var password_characters = "";
-var upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var lower_case = 'abcdefghijklmnopqrstuvwxyz';
-var special_set = '~!@#$%^&*()_+<>?,./{}][|';
-var num_set = '124567890'
-
+// JONATHA KNIGHT CRPTEX CREATOR
+// SELECT HTLML ELEMENT 
 var generateBtn = document.querySelector("#generate");
 
+//ON CLICK RUNS getPassword RETURNS OUT PUT AS ELEMENT INPUT INTO writePassword CALLS FUNCTION ONCE FOR EACH
 generateBtn.addEventListener("click", function(){ writePassword(getPassword())}); 
 
+// FUNCTION DEFINED 
 function getPassword() {
-
+    
+    //ALL VARAIBLES LIVES INSIDE getPassword SO DO NOT NEED TO DECLARED GLOBALLY
+    var realPassword = [];
+    var password;
+    var length;
+    var passwordCharacters = "";
+    var password_characters = "";
+    var upper_case = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var lower_case = 'abcdefghijklmnopqrstuvwxyz';
+    var special_set = '~!@#$%^&*()_+<>?,./{}][|';
+    var num_set = '124567890'
+  
+    //ESTABLISHES A VARIABLE TO CONTROL LENGTH OF PASSWORD AS AN ARRAY
     let parameters = {
         pwlength: Number(),
         
     }
 
+    // CONCATS THE SELECTED CRYPTO KEYS TOGETHER INTO ONE STRING 
     var temporaryPassword = '';
 
+    //PROMPTS THE USER TO INPUT A NUMBER BETWEEN 8 AND 128 RETURNING THEM TO PAGE IF INPUT ERRORS
     parameters.pwlength = +prompt("Pick a number of characters between 8 and 128 for your password.") // prompt to ask password length
 
+
+    // IF THE INPUT IS THE ACCEPTED 8-128 NUMERICAL INPUT PASSES THE USER ON TO NEXT QUERRY OR INITIATES THEM TO START AGAIN
     if (parameters.pwlength<8 || 0) {
+        location.reload();
         window.alert("Must be more than 8 characters.")
     } else if (parameters.pwlength>128) {
         location.reload(); 
         window.alert("Cannot exceed 128 characters.")
     } else (parameters.pwlenth>=8 && parameters.pwlength<=128);
+    
+    // const characterTypesInPassword = parameters.pwlength;
 
-    const characterTypesInPassword = parameters.pwlength;
-
-    // confirm to ask for Capital Letters
+    // ASKS USER TO SELECT THE USER OF CAPITAL LETTERS IN THE PASSWORD 
     parameters.uPPErChars = confirm("Include CAPITAL letters in your password?");
     if (parameters.uPPErChars == true) {
 
@@ -43,8 +54,7 @@ function getPassword() {
         temporaryPassword = temporaryPassword.concat(upper_case);
         //  
     } else {
-        window.alert("Password will not include CAPITAL letters.")
-        return;
+        
         // window.alert("Password will not include CAPITAL letters.")
     }
 
@@ -57,7 +67,7 @@ function getPassword() {
         temporaryPassword = temporaryPassword.concat(lower_case);
         // window.alert("Included lower case letters.")
     } else {
-        return;
+        
         // window.alert("Password will not include lower case letters.")
     }
 
@@ -73,7 +83,7 @@ function getPassword() {
         temporaryPassword = temporaryPassword.concat(special_set);
         // window.alert("Included Special characters.")
     } else {
-        return;
+        
         // window.alert("Excluded Special characters.")
     } 
 
@@ -114,11 +124,18 @@ function getPassword() {
 
 function writePassword(realPassword) {
     // output of getPassword returned as input element for writePassword 
-    passwordText = document.querySelector("#password")
-    passwordText.value = realPassword; //console.log(realPassword);
-    console.log(realPassword); //onsole.log(realPassword);
-}; 
+    // var pullcharacters = "";
+    
+    // for (let i = 0; i < realPassword.length;i++) {
+    //     console.log(pullcharacters);
+    //     pullcharacters = pullcharacters + JSON.stringify(realPassword[i]);
+    // }
+    // JSON.stringify(realPassword);
 
+    passwordText = document.querySelector("#password")
+    passwordText.value = realPassword.join(''); //console.log(realPassword);
+    //onsole.log(realPassword);
+}; 
 
 
 
