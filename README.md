@@ -9,5 +9,11 @@ Oringal project focused on the use of randomized number arrays to generate base 
 
 ![Crptex Screenshot](/assets/images/screenCapture.JPG)
 
-Written by Jonathan Knight
+
 <a href="https://github.com/knight19jonathan/Crptex-Creator-#:~:text=https%3A//github.com/knight19jonathan/Crptex%2DCreator%2D.git">Source Code Link</a>
+
+# Credits 
+Created by Jonatha Knight
+Thanks to:
+😎 W3Schools, reference for HTML, CSS, and JS helpStackoverflow for direction on how to solve specific problems
+❤Vivian Hou Love of my life❤
